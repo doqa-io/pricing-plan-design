@@ -8,22 +8,46 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Pricing Plans</h1>
+    <h1 id="pricing-heading">Pricing Plans</h1>
 
-    <div class="pricing-container">
-      <div class="pricing-card basic-plan">
-        <h2>Basic</h2>
-        <p>$9/month</p>
+    <div class="pricing-container" role="list" aria-labelledby="pricing-heading">
+      <div class="pricing-card basic-plan" role="listitem" aria-labelledby="basic-title">
+        <h2 id="basic-title">Basic</h2>
+        <p aria-hidden="true">$9/month</p>
+        <p class="sr-only">$9 per month</p>
+        <ul class="features">
+          <li class="feature available">1 project</li>
+          <li class="feature unavailable">Priority support</li>
+          <li class="feature unavailable">Unlimited collaborators</li>
+          <li class="feature unavailable">Advanced analytics</li>
+        </ul>
+        <button type="button" class="action-btn" aria-label="Choose Basic plan">Choose Basic</button>
       </div>
 
-      <div class="pricing-card pro-plan">
-        <h2>Pro</h2>
-        <p>$19/month</p>
+      <div class="pricing-card pro-plan" role="listitem" aria-labelledby="pro-title">
+        <h2 id="pro-title">Pro</h2>
+        <p aria-hidden="true">$19/month</p>
+        <p class="sr-only">$19 per month</p>
+        <ul class="features">
+          <li class="feature available">5 projects</li>
+          <li class="feature available">Priority support</li>
+          <li class="feature unavailable">Unlimited collaborators</li>
+          <li class="feature unavailable">Advanced analytics</li>
+        </ul>
+        <button type="button" class="action-btn primary" aria-label="Choose Pro plan">Choose Pro</button>
       </div>
 
-      <div class="pricing-card premium-plan">
-        <h2>Premium</h2>
-        <p>$29/month</p>
+      <div class="pricing-card premium-plan" role="listitem" aria-labelledby="premium-title">
+        <h2 id="premium-title">Premium</h2>
+        <p aria-hidden="true">$29/month</p>
+        <p class="sr-only">$29 per month</p>
+        <ul class="features">
+          <li class="feature available">Unlimited projects</li>
+          <li class="feature available">Priority support</li>
+          <li class="feature available">Unlimited collaborators</li>
+          <li class="feature available">Advanced analytics</li>
+        </ul>
+        <button type="button" class="action-btn" aria-label="Choose Premium plan">Choose Premium</button>
       </div>
     </div>
   </body>

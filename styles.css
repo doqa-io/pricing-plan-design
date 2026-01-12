@@ -4,6 +4,19 @@ body {
 	padding: 24px;
 }
 
+/* Visually hidden (screen-reader only) */
+.sr-only {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0 0 0 0) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
+
 .pricing-container {
 	display: flex;
 	flex-wrap: wrap;
@@ -20,6 +33,38 @@ body {
 	box-sizing: border-box;
 }
 
+.action-btn {
+	margin-top: 12px;
+	padding: 10px 14px;
+	border: none;
+	background: #eee;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.action-btn:hover {
+	background: #e0e0e0;
+}
+
+.action-btn.primary {
+	background: #0078d4;
+	color: #fff;
+}
+
+.action-btn.primary:hover {
+	background: #005a9e;
+}
+
+/* Focus styles for keyboard users */
+.action-btn:focus {
+	outline: 3px solid Highlight;
+	outline-offset: 2px;
+}
+
+.pricing-card:focus-within {
+	box-shadow: 0 0 0 3px rgba(0,120,212,0.15);
+}
+
 .basic-plan {
 	order: 1;
 }
@@ -32,4 +77,41 @@ body {
 .premium-plan {
 	order: 3;
 }
+
+/* Feature list styles */
+.features {
+	list-style: none;
+	padding: 0;
+	margin: 12px 0 0 0;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.feature {
+	padding-left: 22px;
+	position: relative;
+}
+
+.feature::before {
+	position: absolute;
+	left: 0;
+	top: 2px;
+	font-weight: 700;
+}
+
+.feature.available::before {
+	content: "✓";
+	color: green;
+}
+
+.feature.unavailable {
+	color: #888;
+}
+
+.feature.unavailable::before {
+	content: "✕";
+	color: #c00;
+}
+
 
