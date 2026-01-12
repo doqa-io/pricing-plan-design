@@ -27,10 +27,14 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	flex: 0 0 200px;
+	width: 260px;
+	height: 360px;
+	flex: 0 0 260px;
 	border: 2px solid black;
 	padding: 16px;
 	box-sizing: border-box;
+	transition: transform 200ms ease, box-shadow 200ms ease;
+	transform-origin: center top;
 }
 
 .action-btn {
@@ -71,11 +75,27 @@ body {
 
 .pro-plan {
 	order: 2;
-	flex-grow: 2;
 }
 
 .premium-plan {
 	order: 3;
+}
+
+/* Hover grow: keep layout stable by scaling the card, elevate with z-index */
+.pricing-card:hover,
+.pricing-card:focus-within {
+	transform: scale(1.06);
+	box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+	z-index: 2;
+}
+
+/* Ensure container allows visible overflow for scaled cards */
+.pricing-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	align-items: flex-start;
+	overflow: visible;
 }
 
 /* Feature list styles */
